@@ -15,8 +15,8 @@ def apply_mask(nifti_fn, mask_fn, out_file_path):
     mask_data = mask_image.get_fdata()
 
     # Apply the binary mask to the NIfTI data
-    inv_mask_data = 1 - mask_data
-    masked_data = nifti_data * inv_mask_data
+    # inv_mask_data = 1 - mask_data
+    masked_data = nifti_data * mask_data
 
     # Create a new NIfTI image with the masked data
     masked_image = nib.Nifti1Image(masked_data, nifti_image.affine)

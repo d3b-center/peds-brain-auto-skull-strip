@@ -17,13 +17,13 @@ Configured to run on CPU.
 Build the image locally:
 
 ```
-docker build -t afam00/peds-brain-auto-deface .
+docker build -t afam00/peds-brain-auto-skull-strip:0.0.0 .
 ```
 
 Push the image to the Docker Hub:
 
 ```
-docker image push afam00/peds-brain-auto-deface
+docker image push afam00/peds-brain-auto-skull-strip:0.0.0
 ```
 
 ### Testing
@@ -31,16 +31,16 @@ docker image push afam00/peds-brain-auto-deface
 From within the directory:
 
 ```
-docker build -t peds-brain-auto-deface .
+docker build -t peds-brain-auto-skull-strip .
 ```
 
 ```
-docker run --rm peds-brain-auto-deface
+docker run --rm peds-brain-auto-skull-strip
 ```
 
 ## Available models:
 
-- Version V1 (stratified dataset)
+- 
 
 ## References
 

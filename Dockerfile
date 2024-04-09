@@ -18,7 +18,7 @@ RUN pip3 install nibabel==3.2.2
 #############################################
 # Configure entrypoint
 FROM base AS release
-COPY input/ /input
+# COPY input/ /input
 COPY nnUNet_preprocessed /nnUNet_preprocessed
 COPY nnUNet_raw_data_base /nnUNet_raw_data_base
 COPY nnUNet_trained_models /nnUNet_trained_models
