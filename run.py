@@ -66,7 +66,7 @@ for pred_mask_path in glob(f'{result_data_dir}/*.nii*'):
     out_mask_name = f'{sub_id}_pred_brainMask.nii.gz'
     shutil.move(f'{pred_mask_path}', f'{out_path}/{out_mask_name}')
     # shutil.move(f'{result_data_dir}/chop_000.nii.gz', f'{out_path}/{out_mask_name}')
-    print(f"           face mask saved to: {out_path}/{out_mask_name}")
+    print(f"           brain mask saved to: {out_path}/{out_mask_name}")
     # apply the predicted mask to the original image
     for in_file in glob(f'{input_folder}/{sub_id}*'):
         orig_im_fn = os.path.basename(in_file)

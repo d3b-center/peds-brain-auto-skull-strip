@@ -1,4 +1,4 @@
-# Pediatric automated defacing
+# Pediatric automated skull stripping with nnUNet
 
 Dependencies:
 - Python 3.9
