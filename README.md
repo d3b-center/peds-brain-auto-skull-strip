@@ -84,3 +84,10 @@ docker run --rm peds-brain-auto-skull-strip
 ## References
 
 - Isensee, F., Jaeger, P.F., Kohl, S.A.A. et al. "nnU-Net: a self-configuring method for deep learning-based biomedical image segmentation." Nat Methods (2020). https://doi.org/10.1038/s41592-020-01008-z
+
+
+## Licenses
+
+This software includes third party open source software components with their own licenses: 
+
+- nnUnet: Apache-2.0 license : https://github.com/MIC-DKFZ/nnUNet?tab=Apache-2.0-1-ov-file
