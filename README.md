@@ -69,7 +69,9 @@ Configured to run on CPU.
     docker-compose_multi-parametric.yml
     input/
         sub001_FL.nii.gz
-        sub002_T2.nii.gz
+        sub001_T1.nii.gz
+        sub001_T1CE.nii.gz
+        sub001_T2.nii.gz
         ...
     ```
     
