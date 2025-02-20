@@ -79,13 +79,13 @@ Configured to run on CPU.
 
     or
 
-    docker compose -f docker-compose_multi--parametric.yml up
+    docker compose -f docker-compose_multi-parametric.yml up
     ```
 
 ## Available models:
 
-- nnUNet-based skull-stripping using multi-parametric brain MRI scans as input: Version 1
 - nnUNet-based skull-stripping using single-parametric brain MRI scans as input: Version 1
+- nnUNet-based skull-stripping using multi-parametric brain MRI scans as input: Version 1
 
 ## References
 
