@@ -1,0 +1,8 @@
+version: "3.8"
+services:
+    skull-strip:
+        image: gandhideep22/peds-brain-auto-skull-strip-singleparametric:0.0.0 
+        hostname: 'skull-strip-singleparametric'
+        volumes:
+            - ./input:/input
+            - ./output:/output

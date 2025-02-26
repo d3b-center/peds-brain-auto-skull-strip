@@ -1,6 +1,6 @@
-# Pediatric automated multi-parametric skull stripping with nnUNet
+# Pediatric automated single- or multi-parametric skull stripping with nnUNet
 
-This pipeline can be used to generate AI-predicted brain masks and skull-stripped images for pediatric patients with multi-parametric MRIs. It was trained using the nnU-Net framework on a multi-institutional, heterogeneous dataset.
+This pipeline can be used to generate AI-predicted brain masks and skull-stripped images for pediatric patients with single- or multi-parametric MRIs. It was trained using the nnU-Net framework on a multi-institutional, heterogeneous dataset.
 
 Dependencies include:
 1. Python 3.9
@@ -15,7 +15,7 @@ Ariana Familiar, PhD, Center for Data-Driven Discovery in Biomedicine (D3b), Chi
 ## STEP 1: Prepare the input files
 
 Required inputs:
-Following pre-processed multi-parametric pediatric brain MRI scans: 
+All of the following pre-processed pediatric brain MRI scans for the multi-parametric model OR just one of the scans for the single-parametric model: 
 1. T1-weighted pre-contrast (T1w)
 2. T1-weighted post-contrast (T1w post-contrast)
 3. T2-weighted (T2w)
@@ -51,34 +51,42 @@ Configured to run on CPU.
 ### [Install Docker](https://docs.docker.com/engine/install/)
 ### Copy all files into a single directory
 
-### Push to Docker Hub
+1. copy the appropriate `.yml` file from this repository into the directory that contains your `input/` folder:
+   docker-compose_single-parametric.yml for Single-parametric input
+   docker-compose_multi-parametric.yml for Multi-parametric inputs
 
-Build the image locally:
+    Single-parametric model example: 
+    ```
+    docker-compose_single-parametric.yml
+    input/
+        sub001_FL.nii.gz
+        sub002_T2.nii.gz
+        ...
+    ```
 
-```
-docker build -t afam00/peds-brain-auto-skull-strip:0.0.0 .
-```
+    Multi-parametric model example: 
+    ```
+    docker-compose_multi-parametric.yml
+    input/
+        sub001_FL.nii.gz
+        sub001_T1.nii.gz
+        sub001_T1CE.nii.gz
+        sub001_T2.nii.gz
+        ...
+    ```
+    
+3. from within that folder, run the command:
+    ```
+    docker compose -f docker-compose_single-parametric.yml up
 
-Push the image to the Docker Hub:
+    or
 
-```
-docker image push afam00/peds-brain-auto-skull-strip:0.0.0
-```
-
-### Running Inference
-
-From within the directory:
-
-```
-docker build -t peds-brain-auto-skull-strip .
-```
-
-```
-docker run --rm peds-brain-auto-skull-strip
-```
+    docker compose -f docker-compose_multi-parametric.yml up
+    ```
 
 ## Available models:
 
+- nnUNet-based skull-stripping using single-parametric brain MRI scans as input: Version 1
 - nnUNet-based skull-stripping using multi-parametric brain MRI scans as input: Version 1
 
 ## References
